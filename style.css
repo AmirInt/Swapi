@@ -1,0 +1,141 @@
+/* Importing some google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Goldman&family=Montserrat:ital,wght@1,500&family=Titillium+Web:wght@200&display=swap');
+
+/* The general configurations on the body element, such as the background-image and size */
+body {
+    margin: auto;
+    background: url('assets/bg-00.jpg') center top;
+    transition: background 1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90vw;
+    height: 90vh;
+}
+
+/* Animation for the buttons' background-color */
+@keyframes anim-bg {
+    0% {background-position: 10% 10%}
+    50% {background-position: 95% 95%}
+    100% {background-position: 10% 10%}
+}
+
+/* Styles that apply to all the buttons on the webpage */
+button {
+    margin: 1vh;
+    font: 3vh 'Titillium Web';
+    background: linear-gradient(to bottom right, rgb(200, 10, 150), rgb(10, 140, 250));
+    background-position: 0% 100%;
+    background-size: 200% 200%;
+    animation: anim-bg 3s infinite;
+    color: whitesmoke;
+    border: transparent 2px solid;
+    border-radius: 1vh;  
+    transition: border-color 0.4s 
+}
+
+/* Styles that apply to hovered buttons */
+button:hover {
+    border-color: whitesmoke;
+}
+
+/* Styles that apply to disabled buttons */
+button:disabled {
+    color: grey;
+    border-color: transparent;
+}
+
+/* Styles for the main container of the webpage  */
+.content {
+    width: 65vw;
+    min-height: 65vh;
+    padding: 3%;
+    background-color: rgba(70, 70, 70, 0.85);
+    color: whitesmoke;
+    border-radius: 2vw;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Styles for the 'div's inside the 'content' */
+.content > div {
+    width: 95%;
+}
+
+/* Styles for the 'header' div containing the title of the webpage */
+.header {
+    height: 10vh;
+    font: 5vh 'Montserrat';
+}
+
+/* Styles that apply to the 'tab' containing the actual film and starships' info */
+.tab {
+    height: fit-content;
+    font: 3vh 'Titillium Web';
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/* Styles that apply to the tables inside 'tab' */
+.tab table {
+    width: 100%;
+}
+
+/* Styles for table data inside 'tab' */
+.tab td {
+    width: 25%;
+    text-align: center;
+}
+
+/* Styles for the sidebars under the starships section when displaying the starships */
+.nav-div {
+    width: 6vh;
+    min-height: 60vh;
+    background: repeating-linear-gradient(-45deg, rgba(0, 0, 0, 0.6) 0.3vh, rgba(80, 80, 80, 0.6) 1vh);
+    display: flex;
+    align-items: center;
+    border-radius: 1vh;
+}
+
+/* Styles for the sidebar buttons */
+.nav-div button {
+    background: transparent;
+    font: 3vh 'Montserrat';
+    height: fit-content;
+}
+
+/* Styles for the two info sections inside 'tab' when displaying starships info */
+.inner-div {
+    width: 45%;
+}
+
+/* Styles that applay to the table data inside the div containing the list of starships when displaying starships */
+#starships-list-div td {
+    font-size: 4vh;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+}
+
+/* Styles for the hovered table data explained above */
+#starships-list-div td:hover {
+    opacity: 1;
+}
+
+/* Styles for the info div that contains the starships info while displaying the starships */
+#info-div {
+    font-family: 'Goldman';
+    font-weight: 100;
+}
+
+/* Styles that apply to all text inside 'info-div' */
+#info-div h2, h4, p {
+    margin: 1vh;
+}
+
+/* Styles for the back button on the top left corner of the container while displaying
+the starships info */
+#back-button {
+    font: 3vh 'Titillium Web';
+    display: none;
+}
