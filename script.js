@@ -287,8 +287,8 @@ function listEpisodes() {
     
     let table = getTableHeader();
     
-    for (let i = 0; i < 6; ++i) {
-        let tableRow = getTableRow(episodes[i])
+    for (let i = 3; i < 9; ++i) {
+        let tableRow = getTableRow(episodes[i % 6])
 
         table.appendChild(tableRow);
     }
@@ -310,15 +310,35 @@ let picture_id = 0;
 let episodes = [];
 let starships = [];
 let globalPageView = 0;
+
+// The main tab
 let tab = document.querySelector('.tab');
+
+// The title of the main tab
 let tabTitle = document.querySelector('#tab-title');
+
+// The previous button div when displaying the starships' info
 let prevDiv = document.createElement('div');
+
+// The previous button when displaying the starships' info
 let prevBtn = document.createElement('button');
+
+// The list div for displaying the starships' info
 let listDiv = document.createElement('div');
+
+// The table that neatly displays the starships' info
 let listTable = document.createElement('table');
+
+// The division to display a selected starship info
 let infoDiv = document.createElement('div');
+
+// The previous button div when displaying the starships' info
 let nextDiv = document.createElement('div');
+
+// The previous button when displaying the starships' info
 let nextBtn = document.createElement('button');
+
+// The back button to return to the main page
 let backButton = document.querySelector('#back-button');
 
 setup();
