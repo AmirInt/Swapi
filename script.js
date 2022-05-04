@@ -75,6 +75,22 @@ function backToMainPage() {
 }
 
 /**
+ * Compares two episode JSON objects based on their 'episode_id's.
+ * This function is for sorting the episodes array.
+ * @param {Object} a The first JSON object
+ * @param {Object} b The second JSON object
+ * @returns -1 if a < b, 1 if a > b and 0 if a == b.
+ */
+function compare(a, b) {
+    if (a['episode_id'] < b['episode_id'])
+        return -1;
+    else if (a['episode_id'] > b['episode_id'])
+        return 1;
+    else
+        return 0;
+}
+
+/**
  * Sends a request to the server and downlaods the series info from the API.
  */
 async function fetchEpisodes() {
@@ -287,7 +303,7 @@ function listEpisodes() {
     
     let table = getTableHeader();
     
-    for (let i = 3; i < 9; ++i) {
+    for (let i = 0; i < 6; ++i) {
         let tableRow = getTableRow(episodes[i % 6])
 
         table.appendChild(tableRow);
@@ -302,6 +318,7 @@ function listEpisodes() {
 async function loadMainPage() {
     document.querySelector('.tab').innerHTML = 'Loading...';
     await fetchEpisodes();
+    episodes.sort(compare);
     listEpisodes();
 }
 
